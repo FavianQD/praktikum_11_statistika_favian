@@ -1,0 +1,19 @@
+df_favian = read.delim("clipboard")
+View(df_favian)
+head(df_favian)
+
+model <- aov(korosi~metode, data=df_favian)
+summary(model)
+
+tukey.test <- TukeyHSD(model)
+tukey.test
+
+#latihan kedua
+df_favian=PlantGrowth
+View(df_favian)
+
+model <- aov(weight~group, data=df_favian)
+summary(model)
+
+tukey.test <- TukeyHSD(model)
+tukey.test
